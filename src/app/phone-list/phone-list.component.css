@@ -1,0 +1,10 @@
+.phones {
+    list-style: none;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.no-bullets {
+    list-style: none;
+}
