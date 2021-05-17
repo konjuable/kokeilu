@@ -11,13 +11,13 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./phone-detail.component.css']
 })
 export class PhoneDetailComponent implements OnInit {
-  phoneId: string = '';
+  phoneId = '';
   productList: any[];
   chosenPhone: any = '';
   faCheck = faCheck;
   faMinus = faMinus;
-  newImageString: string = '';
-  allReady: boolean = false;
+  newImageString = '';
+  allReady = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,8 +30,10 @@ export class PhoneDetailComponent implements OnInit {
   }
 
   getPhone(): void {
+    // tslint:disable-next-line: no-string-literal
     this.phoneId = this.route.snapshot.params['id'];
     this.route.params.subscribe((params) => {
+      // tslint:disable-next-line: no-string-literal
       this.phoneId = params['id'];
     });
     this.phonoService.getProduct(this.phoneId).subscribe((data => {
@@ -44,6 +46,7 @@ export class PhoneDetailComponent implements OnInit {
     this.location.back();
   }
 
+  // tslint:disable-next-line: typedef
   changeImg(event: any) {
     this.newImageString = event.target.getAttribute('src');
     document.getElementById('view-img').setAttribute('src', this.newImageString);

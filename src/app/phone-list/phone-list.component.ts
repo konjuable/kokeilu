@@ -9,16 +9,17 @@ import { OrderPipe } from 'ngx-order-pipe';
 })
 export class PhoneListComponent implements OnInit {
   productList: any[];
-  searchText:string;
-  order:string = '';
+  searchText: string;
+  order = '';
 
-  //event handler for the select element's change event
-  selectChangeHandler (event: any) {
-    //update the ui
-    this.order = event.target.value; 
+  // event handler for the select element's change event
+  // tslint:disable-next-line: typedef
+  selectChangeHandler(event: any) {
+    // update the ui
+    this.order = event.target.value;
   }
 
-  constructor( 
+  constructor(
     private orderPipe: OrderPipe,
     public phoneService: PhoneService) { }
 
@@ -33,7 +34,7 @@ export class PhoneListComponent implements OnInit {
     (error) => {
       console.log('http-error:');
       console.log(error);
-    })
+    });
   }
 
 }
